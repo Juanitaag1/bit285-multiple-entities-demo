@@ -13,7 +13,8 @@ namespace IndyBooks.Models
         [Required]
         public string Title { get; set; }
         [Required]
-        public string Author { get; set; }
+
+        public int AuthorID { get; set; }
         public string Edition { get; set; }
         [Required]
         [DataType(DataType.Currency)]
