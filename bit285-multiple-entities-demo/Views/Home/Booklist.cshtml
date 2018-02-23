@@ -1,0 +1,19 @@
+﻿@model bit285_multiple_entities_demo.ViewModels.BookListViewmodel
+
+@{
+    ViewBag.Title = "Booklist";
+}
+
+<h2>Booklist</h2>
+
+<div>
+    <h4>BookListViewmodel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+@Html.DropDownListFor(m => m.book, new SelectList(Model.book, "book.Book.BookID", "Title"), "select book", new { @class = "form-control" })
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

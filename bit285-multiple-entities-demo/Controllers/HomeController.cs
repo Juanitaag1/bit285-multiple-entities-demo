@@ -41,15 +41,53 @@ namespace IndyBooks.Controllers
         [HttpPost]
         public ActionResult AddBook(Book book)
         {
-            return View();
+            
+            db.Books.Add(book);
+            db.SaveChanges();
+            return View(db.Books.ToList());
         }
         /*
           * Author Creation and List
           * TODO: Develop methods and Views to create and list Authors 
           */
+          public ActionResult addAuthor()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult addAuthor(Author author)
+        {
+            db.Authors.Add(author);
+            db.SaveChanges();
+            return View(db.Authors.ToList());
+        }
         /*
           * Member Creation and List
           * TODO: Develop methods and Views to create and list Members 
           */
+          public ActionResult Members()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Members(Member m)
+        {
+            db.Members.Add(m);
+            db.SaveChanges();
+            return View(db.Members.ToList());
+        }
+        //Get viewmodel
+        public ActionResult Booklist()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Booklist(bit285_multiple_entities_demo.ViewModels.BookListViewmodel booklistVM)
+        {
+
+            return View(booklistVM);
+        }
     }
 }

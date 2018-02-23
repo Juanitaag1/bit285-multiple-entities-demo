@@ -9,7 +9,7 @@ namespace IndyBooks.Models
     public class Book
     {
         [Key]
-        public int BookID { get; set; }         //Database requires a Primary Key field
+        public int BookID { get; set; }  //Database requires a Primary Key field
         [Required]
         public string Title { get; set; }
         [Required]
@@ -24,5 +24,7 @@ namespace IndyBooks.Models
 
         // Property to represent the entity relationship: "A Book can have many Purchases"
         public virtual ICollection<Purchase> SalesHistory { get; set; }
+
+        public virtual Book b { get; set; }
     }
 }

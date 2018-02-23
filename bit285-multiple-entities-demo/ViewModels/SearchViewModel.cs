@@ -8,5 +8,6 @@ namespace IndyBooks.ViewModels
     public class SearchViewModel
     {
         public string Author { get; set; }
+
     }
 }
